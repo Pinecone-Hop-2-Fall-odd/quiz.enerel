@@ -1,0 +1,28 @@
+{
+  "type": "module",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^8.0.1",
+    "tailwind": "^4.0.0"
+  },
+  "name": "back-end",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx nodemon src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pinecone-Hop-2-Fall-odd/quiz.enerel.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Pinecone-Hop-2-Fall-odd/quiz.enerel/issues"
+  },
+  "homepage": "https://github.com/Pinecone-Hop-2-Fall-odd/quiz.enerel#readme",
+  "description": ""
+}
