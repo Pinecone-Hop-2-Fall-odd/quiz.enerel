@@ -1,4 +1,3 @@
-import { now } from "mongoose";
 import { QuizModel1 } from "../../models/quiz-model.js";
 
 export const quiz = [];
@@ -7,7 +6,6 @@ export const question = async (req, res) => {
   const body = req.body;
 
   await QuizModel1.create({
-    // image: body.image,
     question: body.question,
     answers: body.answer,
     id: Date.now().toString(),

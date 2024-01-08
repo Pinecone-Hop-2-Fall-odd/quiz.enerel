@@ -24,7 +24,7 @@ export const Timer = ({ onTimeRunout }) => {
   }, []);
 
   useEffect(() => {
-    if (seconds >= 10000000000) {
+    if (seconds >= 180) {
       onTimeRunout();
     }
   }, [seconds]);

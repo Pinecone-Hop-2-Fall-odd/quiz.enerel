@@ -46,17 +46,15 @@ function Users(props) {
     router.push("/");
   }
   return (
-    <div className="flex bg-[#5ac650] text-[black] p-[10px] h-screen flex-col justify-center items-center">
+    <div className="flex bg-[#0f4589] text-[black] p-[10px] h-screen flex-col justify-center items-center">
       <h2
         onClick={() => GoBack()}
-        className="text-white text-[30px] mb-[300px] border-b-2 border-white hover:border-[green] hover:text-[green]"
+        className="text-white text-[30px] mb-[300px] border-b-2 border-white hover:border-[#89c3fe] hover:text-[#89c3fe]"
       >
         Go Back
       </h2>
       <div className="flex gap-[15px]">
-        <img className="w-[50px] h-[50px] animate-bounce" src="lollies.png" />
         <h1 className="text-white text-[30px] mb-[20px]">Welcome Back!</h1>
-        <img className="w-[50px] h-[50px] animate-bounce" src="lollies.png" />
       </div>
       <div className="flex flex-row gap-[10px]">
         <input

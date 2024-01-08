@@ -24,13 +24,13 @@ export const Timer = ({ setResult, result }) => {
   }, []);
 
   useEffect(() => {
-    if (seconds >= 100) {
+    if (seconds >= 420) {
       setResult(!result);
     }
   }, [seconds]);
 
   return (
-    <div className="text-[black] text-[15px] flex">
+    <div className="text-[#69b4ff] text-[15px] flex">
       {/* <h3 onChange={() => CheckTime()} value={ama}> */}
       <h3>{getTime(seconds).minutes}</h3>
       <h3>:</h3>

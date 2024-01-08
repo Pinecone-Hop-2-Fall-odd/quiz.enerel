@@ -1,64 +1,62 @@
-import { useState } from "react";
-
-export const OneQuiz = ({ data, setNumberResults }) => {
-  const [activeDiv, setActiveDiv] = useState(null);
-
-  function ChosenAnswer(index) {
-    if (data.answers[index].isCorrect) {
-      setNumberResults((prev) => (prev += 1));
-    }
-    setActiveDiv(index === activeDiv ? null : index);
-  }
+export const OneQuiz = ({ datas, questionId, activeDiv, ChosenAnswer }) => {
   return (
-    <div className="flex justify-center items-center flex-col gap-[100px]">
-      <div className="flex gap-[5px]">
-        <h2>Question :</h2>
-        <h1>{data.question}</h1>
+    <div className=" w-[1000px] h-[700px] flex justify-center items-center flex-col gap-[200px] border-[4px] bg-[white] border-[#69b4ff] rounded-[10px] p-[10px]">
+      <div className="flex gap-[10px] text-[#69b4ff] text-[70px] flex-col justify-center items-center">
+        <h2>Question: </h2>
+        <h1>{datas[questionId]?.question}</h1>
       </div>
       <div className="flex flex-wrap gap-[20px] justify-center align-center">
         <div
-          onClick={() => ChosenAnswer(0)}
+          onClick={() =>
+            ChosenAnswer(datas[questionId]?.answers[0].isCorrect, 0)
+          }
           className={`w-[300px] border-2 ${
             activeDiv !== 0
-              ? "border-[#00456b]  text-[#00456b]"
-              : "border-[#60a0c3]  text-[#60a0c3]"
-          } rounded-[10px] h-[30px] flex justify-start items-center gap-[10px] p-[5px]`}
+              ? "border-[#69b4ff]  text-[#69b4ff]"
+              : "border-[#282ab0]  text-[#282ab0]"
+          } rounded-[10px] h-[40px] flex justify-start items-center gap-[10px] p-[5px] cursor-pointer `}
         >
           <h2 className="">a.</h2>
-          <h3>{data.answers[0].answer}</h3>
+          <h3>{datas[questionId]?.answers[0].answer}</h3>
         </div>
         <div
-          onClick={() => ChosenAnswer(1)}
+          onClick={() =>
+            ChosenAnswer(datas[questionId]?.answers[1].isCorrect, 1)
+          }
           className={`w-[300px] border-2 ${
             activeDiv !== 1
-              ? "border-[#00456b]  text-[#00456b]"
-              : "border-[#60a0c3]  text-[#60a0c3]"
-          } rounded-[10px] h-[30px] text-[#00456b] flex justify-start items-center gap-[10px] p-[5px]`}
+              ? "border-[#69b4ff]  text-[#69b4ff]"
+              : "border-[#282ab0]  text-[#282ab0]"
+          } rounded-[10px] h-[40px] text-[#00456b] flex justify-start items-center gap-[10px] p-[5px] cursor-pointer`}
         >
           <h2 className="">b.</h2>
-          <h3>{data.answers[1].answer}</h3>
+          <h3>{datas[questionId]?.answers[1].answer}</h3>
         </div>
         <div
-          onClick={() => ChosenAnswer(2)}
+          onClick={() =>
+            ChosenAnswer(datas[questionId]?.answers[2].isCorrect, 2)
+          }
           className={`w-[300px] border-2 ${
             activeDiv !== 2
-              ? "border-[#00456b]  text-[#00456b]"
-              : "border-[#60a0c3]  text-[#60a0c3]"
-          } rounded-[10px] h-[30px] text-[#00456b] flex justify-start items-center gap-[10px] p-[5px]`}
+              ? "border-[#69b4ff]  text-[#69b4ff]"
+              : "border-[#282ab0]  text-[#282ab0]"
+          } rounded-[10px] h-[40px] text-[#00456b] flex justify-start items-center gap-[10px] p-[5px] cursor-pointer`}
         >
           <h2 className="">c.</h2>
-          <h3>{data.answers[2].answer}</h3>
+          <h3>{datas[questionId]?.answers[2].answer}</h3>
         </div>
         <div
-          onClick={() => ChosenAnswer(3)}
+          onClick={() =>
+            ChosenAnswer(datas[questionId]?.answers[3].isCorrect, 3)
+          }
           className={`w-[300px] border-2 ${
             activeDiv !== 3
-              ? "border-[#00456b]  text-[#00456b]"
-              : "border-[#60a0c3]  text-[#60a0c3]"
-          } rounded-[10px] h-[30px] text-[#00456b] flex justify-start items-center gap-[10px] p-[5px]`}
+              ? "border-[#69b4ff]  text-[#69b4ff]"
+              : "border-[#282ab0]  text-[#282ab0]"
+          } rounded-[10px] h-[40px] text-[#00456b] flex justify-start items-center gap-[10px] p-[5px] cursor-pointer`}
         >
           <h2 className="">d.</h2>
-          <h3>{data.answers[3].answer}</h3>
+          <h3>{datas[questionId]?.answers[3].answer}</h3>
         </div>
       </div>
     </div>

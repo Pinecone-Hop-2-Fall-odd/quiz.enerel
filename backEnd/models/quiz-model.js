@@ -6,7 +6,6 @@ const answerSchema = new mongoose.Schema({
 });
 
 const quizSchema = new mongoose.Schema({
-  // image: String,
   question: String,
   answers: [answerSchema],
   id: Number,

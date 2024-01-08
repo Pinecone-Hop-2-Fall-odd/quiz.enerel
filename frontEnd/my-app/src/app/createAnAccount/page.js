@@ -17,23 +17,16 @@ export default function Home() {
 
   const SumbitNewUser = async () => {
     if (newPass == verifyPass) {
-      //   async function NewUser() {
       const { status, data } = await axios.post(`http://localhost:8080/users`, {
         username: newUser,
-        // age: age,
         password: verifyPass,
         id: id,
-        // work: work,
       });
-      // .then(
-      //   (response) => {
+
       if (status == 200) {
         setDone(!done);
       }
       setUsers(data.data);
-      //   },
-      //   console.log(users)
-      // );
     } else {
       setPasswordCheck(!PasswordCheck);
     }
@@ -45,48 +38,43 @@ export default function Home() {
     router.push("/quiz");
   }
   return (
-    // <div className="bg-gradient-to-r from-purple-500 to-pink-500 w-[100px] h-[100px]">
-    <div className="bg-[#b3c4d5] w-full h-screen flex justify-center items-center flex-col gap-[35px]">
+    <div
+      className="bg-gradient-to-b from-[#5598ec] to-[#0f4589]
+    w-full h-screen flex justify-center items-center flex-col gap-[35px]"
+    >
       <h3
         onClick={() => returnToMainPage()}
-        className="border-b-4 border-lashed border-[white] text-[white] hover:border-[#9cb2c9] hover:text-[#9cb2c9]"
+        className="border-b-4 border-lashed border-[#69b4ff] text-[#69b4ff] hover:border-[#89c3fe] hover:text-[#89c3fe]"
       >
         return to main page
       </h3>
       {done ? (
         <div className="flex flex-col justify-center items-center">
-          {/* <video width="100" height='100'>
-         <source src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pinterest.com%2Fpin%2Fbubble-sticker-by-douglas-schatz-for-ios-android--791648440768468577%2F&psig=AOvVaw3oT1nWMi8OO6wNNuAk4tnZ&ust=1700303373452000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCIDJrObpyoIDFQAAAAAdAAAAABAE" type="gif"/>
-         </video> */}
-
-          {/* <ReactPlayer controls={false} url="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pinterest.com%2Fpin%2Fbubble-sticker-by-douglas-schatz-for-ios-android--791648440768468577%2F&psig=AOvVaw3oT1nWMi8OO6wNNuAk4tnZ&ust=1700303373452000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCIDJrObpyoIDFQAAAAAdAAAAABAE"/> */}
-          {/* <ReactPlayer controls={false} url="https://youtu.be/8Jk_5Yry_SE"/> */}
-
-          <div className="flex flex-col justify-center items-center text-[white] flex-wrap">
+          <div className="flex flex-col justify-center items-center text-[#69b4ff] flex-wrap">
             <div className="flex items-center">
               <img
                 className="w-[50px] h-[50px] animate-bounce"
-                src="blue.webp"
+                src="bubble.png"
               />
               <h1 className="text-[50px]">!Welcome New User!</h1>
               <img
                 className="w-[50px] h-[50px] animate-bounce"
-                src="blue.webp"
+                src="bubble.png"
               />
             </div>
             <h3 className="text-[30px]">
               Create a new account to start the journey whit Blake!
             </h3>
           </div>
-          <div className="flex flex-col gap-[35px]">
+          <div className="flex flex-col gap-[35px] mt-[20px]">
             <input
-              className="rounded-[10px] text-[grey] outline-none w-[300px] h-[40px]"
+              className="rounded-[10px] text-[#69b4ff] outline-none w-[300px] h-[40px]"
               placeholder="Username.."
               value={newUser}
               onChange={(e) => setNewUser(e.target.value)}
             />
             <input
-              className="rounded-[10px] text-[grey] w-[300px] h-[40px] outline-none"
+              className="rounded-[10px] text-[#69b4ff] w-[300px] h-[40px] outline-none"
               placeholder="Password.."
               value={newPass}
               onChange={(e) => setNewPass(e.target.value)}
@@ -95,13 +83,13 @@ export default function Home() {
               <></>
             ) : (
               <div>
-                <h4 className="text-[red] font-[10px]">
+                <h4 className="text-[#b83131] font-[10px]">
                   *Please check spelling mistakes etc*
                 </h4>
               </div>
             )}
             <input
-              className="rounded-[10px] text-[grey] w-[300px] h-[40px] outline-none"
+              className="rounded-[10px] text-[#69b4ff] w-[300px] h-[40px] outline-none"
               placeholder="Verify Password.."
               value={verifyPass}
               onChange={(e) => setVerifyPass(e.target.value)}
@@ -110,7 +98,7 @@ export default function Home() {
               <></>
             ) : (
               <div>
-                <h4 className="text-[red] font-[10px]">
+                <h4 className="text-[#b83131] font-[10px]">
                   *Or you might re-entered the password <br />
                   wrong? Please check spelling mistakes <br />
                   etc*
@@ -120,7 +108,7 @@ export default function Home() {
           </div>
           <button
             onClick={() => SumbitNewUser()}
-            className="border-[#9cb2c9] border-[1px] bg-[#9cb2c9] w-[165px] h-[40px] rounded-[10px] text-white mt-[30px]"
+            className="border-[#5695d3] border-[1px] bg-[#5695d3] w-[165px] h-[40px] rounded-[10px] text-[#bbd9f8] mt-[30px]"
           >
             Sumbit
           </button>
@@ -128,13 +116,13 @@ export default function Home() {
       ) : (
         <div className="flex flex-col gap-[10px] justify-center items-center">
           <div className="flex flex-col p-[15px] justify-center items-center">
-            <h2 className="text-white text-[20px]">
+            <h2 className="text-[#69b4ff] text-[20px]">
               Hello dear user {newUser}! Our journey awaits..
             </h2>
-            <h2 className="text-white text-[20px]">
+            <h2 className="text-[#69b4ff] text-[20px]">
               You can go to the start page to login whit your new account OR
               <span
-                className="border-b-2 border-[white] text-white hover:border-[#9cb2c9] hover:text-[#9cb2c9] ml-[4px]"
+                className="border-b-2 border-[#69b4ff] text-[#69b4ff] hover:border-[#a4d1ff] hover:text-[#a4d1ff] ml-[4px]"
                 onClick={() => quizSpace()}
               >
                 click here

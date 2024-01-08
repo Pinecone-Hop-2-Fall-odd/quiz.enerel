@@ -16,15 +16,15 @@ export const questions = [
     id: "asdjposakdposa",
     type: "input",
     author: "Enerel",
-    question: "Guess the cats breed.",
-    image: "https://sajdopsajdsa",
+    question: "Guess the fruits name.",
+    image: "eggfruit.jpeg",
     answers: "Angora",
   },
   {
     id: "asdjposakdposaa",
     type: "TrueFalse",
     author: "Enerel",
-    question: "We spend a year on the toilet in our lifetime.",
+    question: "Gooseberries are smaller than your thumb.",
     answers: true,
   },
 ];
